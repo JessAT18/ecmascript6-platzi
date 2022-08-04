@@ -141,3 +141,44 @@ helloPromise()
     .then(response => console.log(response))
     .then(() => console.log('Hola'))
     .catch(error => console.log(error));
+
+
+//---------------------------------------------------------------------------
+//Clase 5
+
+class Calculator {
+    constructor() {
+        this.valueA = 0;
+        this.valueB = 0;       
+    }
+    sum(valueA, valueB) {
+        this.valueA = valueA;
+        this.valueB = valueB;
+        return this.valueA + this.valueB;
+    }
+}
+
+const calc = new Calculator();
+console.log(calc.sum(2, 4));
+
+//---
+
+import { hello } from './module.js';
+
+console.log(hello());
+
+//---Generator
+
+function* helloWorld() {
+    if (true) {
+        yield 'Hello, ';
+    }
+    if(true) {
+        yield 'World';
+    }
+};
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
