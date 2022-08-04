@@ -83,3 +83,61 @@ const a = 'b';
 //a = 'a';                  //Const no nos permite modificar a
 console.log(a);
 
+//---------------------------------------------------------------------------
+//Clase 4
+
+let name2 = 'Jessica';
+let age2 = 22;
+
+//es5
+obj = { name: name2, age: age2 };
+
+//es6
+obj2 = { name2, age2 };
+
+console.log(obj);
+console.log(obj2);
+
+//Arrow functions
+
+const names = [
+    {name: 'Jessica', age: 22},
+    {name: 'Andrea', age: 18}
+]
+
+let listOfNames = names.map( function(item) { //Funcion anonima
+    console.log(item.name);
+});
+
+//es6
+
+let listOfNames2 = names.map(item => console.log(item.name));
+
+const listOfNames3 = (name, age, country) => {
+    //...;
+}
+
+const listOfNames4 = name => {
+    //...;
+}
+
+const square = num => num * num;
+
+//Promesas - Asincronismo
+
+const helloPromise = () => { //Arrow function
+    return new Promise((resolve, reject) => { //Promesa
+        if (true) {
+            resolve('Hey!');
+        }
+        else {
+            reject('Ay :(');
+        }
+    });
+    //resolve, reject
+}
+
+helloPromise()
+    .then(response => console.log(response))
+    .then(() => console.log('Hola'))
+    .catch(error => console.log(error));
